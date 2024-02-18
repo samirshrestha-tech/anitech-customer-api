@@ -1,0 +1,17 @@
+@rootUrl = http://localhost:8000/api/v2
+
+@userApi = {{rootUrl}}/front-users
+
+
+### sign up
+POST {{userApi}}
+Content-Type: application/json
+
+{
+    "fName":"sam",
+  "lName": "smith",
+  "email":"sam@smith.com" ,
+  "phone":"23456" ,
+  "address": "ajdskfhahg",
+  "password": "1aAaaa"
+}
