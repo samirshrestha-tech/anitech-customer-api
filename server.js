@@ -12,6 +12,8 @@ const app = express();
 
 import { connectDb } from "./src/connfig/mongoConfig.js";
 
+import productRouter from "./src/router/productRouter.js";
+
 connectDb();
 
 // middlewares
@@ -24,11 +26,13 @@ app.use(morgan());
 
 // local middlewares
 
-const PORT = 8000;
+const PORT = 8001;
 
 // router for user info
 
 app.use("/api/v2/front-users", userRouter);
+
+app.use("/api/v2/products", productRouter);
 
 app.get("/", (req, res) => {
   res.json({

@@ -1,9 +1,9 @@
 import express from "express";
 import { postCustomer } from "../module/userModule.js";
 
-let router = express.Router();
+const router = express.Router();
 
-router.post("/", async (req, res) => {
+router.post("/", async (req, res, next) => {
   try {
     const user = await postCustomer(req.body);
 
@@ -21,8 +21,10 @@ router.post("/", async (req, res) => {
       });
     }
   } catch (error) {
-    console.log(error);
+    next(error);
   }
 });
+
+// product fetching
 
 export default router;
