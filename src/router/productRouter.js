@@ -4,12 +4,12 @@ import axios from "axios";
 const router = express.Router();
 router.get("/", async (req, res, next) => {
   try {
-    const products = await axios.get("http://localhost:8000/api/v1/products");
+    const { data } = await axios.get("http://localhost:8000/api/v1/products");
 
-    console.log(products.data);
+    console.log(data);
     res.json({
       message: "Here are teh products",
-      data: products.data,
+      data,
     });
   } catch (error) {
     next(error);
