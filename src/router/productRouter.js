@@ -8,7 +8,6 @@ router.get("/", async (req, res, next) => {
 
     console.log(data);
     res.json({
-      message: "Here are teh products",
       data,
     });
   } catch (error) {
